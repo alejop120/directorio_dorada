@@ -269,6 +269,14 @@
                     <span class="info-value"><%= @delivery.address %></span>
                 </div>
                 <div class="info-row">
+                    <span class="info-label">💰 Precio:</span>
+                    <span class="info-value" style="font-weight: 700; color: #27ae60; font-size: 1.3rem;">$<%= number_with_delimiter(@delivery.price) %></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">🕐 Solicitado:</span>
+                    <span class="info-value"><%= @delivery.requested_at.strftime('%d/%m/%Y %I:%M %p') %></span>
+                </div>
+                <div class="info-row">
                     <span class="info-label">📊 Estado:</span>
                     <span class="status-badge status-<%= @delivery.status %>">
                         <%=

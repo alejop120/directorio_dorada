@@ -13,6 +13,7 @@ class DeliveriesController < ApplicationController
     if @delivery.save
       redirect_to delivery_path(@delivery), notice: 'Solicitud creada exitosamente'
     else
+      flash.now[:alert] = @delivery.errors.full_messages.join(', ')
       render :new, status: :unprocessable_entity
     end
   end
